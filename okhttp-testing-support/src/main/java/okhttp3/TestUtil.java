@@ -22,6 +22,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import okhttp3.internal.http2.Header;
+import okhttp3.testing.StateMachineEventListener;
 
 public final class TestUtil {
   public static final InetSocketAddress UNREACHABLE_ADDRESS
@@ -53,6 +54,7 @@ public final class TestUtil {
    */
   public static OkHttpClient defaultClient() {
     return new OkHttpClient.Builder()
+        .eventListenerFactory(StateMachineEventListener.FACTORY)
         .connectionPool(connectionPool)
         .dispatcher(dispatcher)
         .dns(SINGLE_INET_ADDRESS_DNS) // Prevent unexpected fallback addresses.
