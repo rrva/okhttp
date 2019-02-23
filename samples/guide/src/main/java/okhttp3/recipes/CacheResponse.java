@@ -17,10 +17,8 @@ package okhttp3.recipes;
 
 import java.io.File;
 import java.io.IOException;
-import okhttp3.Cache;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+
+import okhttp3.*;
 
 public final class CacheResponse {
   private final OkHttpClient client;
